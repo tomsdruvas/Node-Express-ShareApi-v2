@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-function validator (v) {
+function validatorForNumberType (v) {
     return Number.isFinite(v)
 }
 
@@ -17,7 +17,7 @@ const ShareItemSchema = new Schema({
     price:{
         type: Number,
         require: [true, 'Share must have a price.'],
-        validate: [validator, 'This needs to be a Number datatype']
+        validate: [validatorForNumberType, 'This needs to be a Number datatype']
     },
     updatedAt: {
         type: Date,
