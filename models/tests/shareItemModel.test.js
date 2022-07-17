@@ -60,7 +60,6 @@ describe("ShareItem model", () => {
             err = error;
         }
         expect(err).toBeInstanceOf(mongoose.Error.ValidationError);
-        // console.log(err)
         expect(err.errors.symbol).toBeDefined();
     });
 });
