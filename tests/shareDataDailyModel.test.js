@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const ShareItemModel = require("../shareItemModel");
-const ShareDataDailyModel = require("../shareDataDailyModel");
-const db = require('../../setup/db')
+const ShareItemModel = require("../models/shareItemModel");
+const ShareDataDailyModel = require("../models/shareDataDailyModel");
+const db = require('../setup/db')
 
 const shareItemAmazonData = {
     name: "Amazon",
