@@ -43,7 +43,7 @@ describe("ShareItem model", () => {
         });
         const savedShareItemWithInvalidField = await shareItemWithInvalidField.save();
         expect(savedShareItemWithInvalidField._id).toBeDefined();
-        expect(savedShareItemWithInvalidField.nickname).toBeUndefined();
+        expect(savedShareItemWithInvalidField.madeUpField).toBeUndefined();
     });
 
     // It should tell us if any required field is left empty
