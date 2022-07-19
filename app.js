@@ -1,35 +1,24 @@
 const express = require('express');
-const fetchShareItem = require('./utils/fetchShareItem')
-const fetchShareDataDaily= require('./utils/fetchShareDataDaily')
+const morgan = require('morgan');
 
+const shareRouter = require('./routes/shareRoutes');
 
 const app = express();
 
+app.use(morgan('dev'));
+
 app.use(express.json());
-
-
-app.get('/api/shareItems/:symbol', async (req, res) => {
-
-    const shareItemFromAPI = await fetchShareItem(req.params.symbol)
-    const shareDataDailyFromAPI = await fetchShareDataDaily(req.params.symbol)
-    res.status(200).json({
-        status: 'success',
-        data: {
-            shareItem: shareItemFromAPI.data,
-            shareDataDaily: shareDataDailyFromAPI.data
-        }
-    })
+app.use((req, res, next) => {
+    console.log('Hello from the middleware');
+    next();
 })
 
-app.post('/api/shareItem', (req, res)=>{
-    console.log(req.body);
-    res.send('Done');
+app.use((req, res, next) => {
+    req.requestTime = new Date().toISOString();
+    next();
 })
 
+app.use('/api/shareItems', shareRouter)
 
-
-const port = 3000;
-app.listen(port, () => {
-    console.log(`Server is up and running on port ${port}`)
-})
+module.exports = app;
 
