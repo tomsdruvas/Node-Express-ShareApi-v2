@@ -1,7 +1,7 @@
 const axios = require('axios');
 const MockAdapter = require('axios-mock-adapter');
-const fetchShareDataDaily = require("../utils/fetchShareDataDaily");
-const { shareDataDailyMock } = require('./__mock__/mockTestData');
+const fetchShareDataDaily = require("../../utils/fetchShareDataDaily");
+const { shareDataDailyMock } = require('../__mock__/mockTestData');
 
 
 describe("fetchShareItemFromAPI", () => {

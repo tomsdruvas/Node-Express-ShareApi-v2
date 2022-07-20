@@ -2,22 +2,20 @@ const fetchShareItem = require("../utils/fetchShareItem");
 const fetchShareDataDaily = require("../utils/fetchShareDataDaily");
 
 exports.getShareBySymbol = async (req, res) => {
-    console.log(req.requestTime);
-    if(res.locals.existingSymbol){
-        return res.status(200).json({
-            requestedAt: req.requestTime,
-            status: 'success',
-            data: {
-                shareItem: res.locals.existingSymbol,
-                shareDataDaily: res.locals.existingSymbol
-            }
-        })
-    }
+    // if(res.locals.existingSymbol){
+    //     return res.status(200).json({
+    //         requestedAt: req.requestTime,
+    //         status: 'success',
+    //         data: {
+    //             shareItem: res.locals.existingSymbol,
+    //             shareDataDaily: res.locals.existingSymbol
+    //         }
+    //     })
+    // }
 
     const shareItemFromAPI = await fetchShareItem(req.params.symbol)
     const shareDataDailyFromAPI = await fetchShareDataDaily(req.params.symbol)
     res.status(200).json({
-        requestedAt: req.requestTime,
         status: 'success',
         data: {
             shareItem: shareItemFromAPI.data,

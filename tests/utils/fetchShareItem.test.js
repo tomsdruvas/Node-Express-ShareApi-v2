@@ -1,7 +1,7 @@
 const axios = require('axios');
 const MockAdapter = require('axios-mock-adapter');
-const fetchShareItem = require("../utils/fetchShareItem");
-const { shareItemMockData } = require('./__mock__/mockTestData');
+const fetchShareItem = require("../../utils/fetchShareItem");
+const { shareItemMockData } = require('../__mock__/mockTestData');
 
 
 

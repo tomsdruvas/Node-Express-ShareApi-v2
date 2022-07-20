@@ -108,7 +108,47 @@ const shareObjectMockOutput = {
     }
 
 }
+
+const searchShareMockData = {
+    "bestMatches": [
+        {
+            "1. symbol": "AMZN",
+            "2. name": "Amazon.com Inc",
+            "3. type": "Equity",
+            "4. region": "United States",
+            "5. marketOpen": "09:30",
+            "6. marketClose": "16:00",
+            "7. timezone": "UTC-04",
+            "8. currency": "USD",
+            "9. matchScore": "0.8000"
+        },
+        {
+            "1. symbol": "AMZ.DEX",
+            "2. name": "Amazon.com Inc",
+            "3. type": "Equity",
+            "4. region": "XETRA",
+            "5. marketOpen": "08:00",
+            "6. marketClose": "20:00",
+            "7. timezone": "UTC+02",
+            "8. currency": "EUR",
+            "9. matchScore": "0.6000"
+        },
+        {
+            "1. symbol": "AMZ.FRK",
+            "2. name": "Amazon.com Inc",
+            "3. type": "Equity",
+            "4. region": "Frankfurt",
+            "5. marketOpen": "08:00",
+            "6. marketClose": "20:00",
+            "7. timezone": "UTC+02",
+            "8. currency": "EUR",
+            "9. matchScore": "0.6000"
+        }
+    ]
+}
+
 exports.shareItemMockData = shareItemMockData;
 exports.shareDataDailyMock = shareDataDailyMock;
 exports.shareObjectMockOutput = shareObjectMockOutput;
+exports.searchShareMockData = searchShareMockData;
 
