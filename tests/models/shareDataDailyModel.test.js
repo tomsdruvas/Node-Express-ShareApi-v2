@@ -13,6 +13,7 @@ const shareItemAmazonData = {
 let shareDataDailyAmazon = {
     shareItem: null,
     updatedAt: Date.now(),
+    symbol: "AMZN",
     data: {
     "2022-07-15": {
         "1. open": "149.7800",

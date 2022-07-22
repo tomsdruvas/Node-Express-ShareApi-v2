@@ -8,6 +8,10 @@ const ShareDataDailySchema = new Schema({
         ref: 'ShareItem',
         required: [true, 'Share data must have ShareItem association']
     },
+    symbol: {
+        type:String,
+        required: [true, 'ShareData must have a symbol']
+    },
     updatedAt: {
         type: Date,
         default: Date.now()
